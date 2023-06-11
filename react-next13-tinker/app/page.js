@@ -8,6 +8,7 @@ export default async function Home() {
   return (
     <main>
       <h1>Hello World</h1>
+      <div className = "grid gap-16 grid-cols-fluid">
       {res.results.map(movie => (
         <div>
           <Movie
@@ -19,6 +20,7 @@ export default async function Home() {
           />
         </div>
       ))}
+      </div>
     </main>
   )
 }
