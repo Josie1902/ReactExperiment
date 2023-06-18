@@ -8,7 +8,8 @@ import {Button} from '@mui/material'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import Image from 'next/image'
-import house from '../public/house.svg'
+import house from '../../public/house.svg'
+import {Hidden} from '@mui/material'
 
 
 export default function Login(){
@@ -23,7 +24,7 @@ export default function Login(){
 
     return(
         <Grid container>
-            <Grid item xs={7} 
+            <Grid item lg={7} md={7}
             container
             direction="column"
             justifyContent="center"
@@ -78,23 +79,25 @@ export default function Login(){
                   padding:"12px 28px", margin:"40px 0 0 0"}}>Continue</Button>
 
             </Grid>
-            <Grid item xs={4}
-            container
-            justifyContent="flex-start"
-            alignItems="center"
-            >
-                <Box
-                sx ={{backgroundColor: '#5341E6', borderRadius:5,height:"80%",display: 'flex',justifyContent:"center",
-                alignItems:"center"}} 
+            <Hidden only={['xs', 'sm']}>
+                <Grid item lg={4} md={4}
+                container
+                justifyContent="flex-start"
+                alignItems="center"
                 >
-                    <Image
-                    src={house}
-                    width={500}
-                    height={500}
-        
-                    ></Image>
-                </Box>
-            </Grid>
+                    <Box
+                    sx ={{backgroundColor: '#5341E6', borderRadius:5,height:"80%",display: 'flex',justifyContent:"center",
+                    alignItems:"center"}} 
+                    >
+                        <Image
+                        src={house}
+                        width={500}
+                        height={500}
+                    
+                        ></Image>
+                    </Box>
+                </Grid>
+            </Hidden>
         </Grid>
     )
 }
