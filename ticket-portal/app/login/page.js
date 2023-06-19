@@ -24,7 +24,7 @@ export default function Login(){
 
     return(
         <Grid container>
-            <Grid item lg={7} md={7}
+            <Grid item lg={7} md={7} sm={9}
             container
             direction="column"
             justifyContent="center"
@@ -79,15 +79,16 @@ export default function Login(){
                   padding:"12px 28px", margin:"40px 0 0 0"}}>Continue</Button>
 
             </Grid>
-            <Hidden only={['xs', 'sm']}>
-                <Grid item lg={4} md={4}
+            <Hidden only={['xs']}>
+            {/* <Hidden only={['xs', 'sm']}> */}
+                <Grid item lg={5} md={5} sm={3}
                 container
                 justifyContent="flex-start"
                 alignItems="center"
                 >
                     <Box
-                    sx ={{backgroundColor: '#5341E6', borderRadius:5,height:"80%",display: 'flex',justifyContent:"center",
-                    alignItems:"center"}} 
+                    sx ={{backgroundColor: '#5341E6', borderRadius:5,height:"85%",display: 'flex',justifyContent:"center",
+                    alignItems:"center",margin:"0 10% 0 0"}} 
                     >
                         <Image
                         src={house}
