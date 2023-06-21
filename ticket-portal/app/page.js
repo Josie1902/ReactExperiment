@@ -6,14 +6,14 @@ import Options from "./options"
 
 export default function Home() {
   return (
-    <body backgroundColor="#F5F5F5">
+    <body style={{backgroundColor: "#F5F5F5"}}>
       <Grid container style={{width:"100vw",height:"100vh"}}>
         <Grid xs={2} 
         style={{backgroundColor: "#ff8a80" }}
         >
           Navbar
         </Grid>
-        <Grid xs={10}
+        <Grid item={true} xs={10}
         direction="column"
         >
           <Typography variant="h4" fontWeight="bold" align='center' margin="5ch 0 2ch 0">What can we help you with?</Typography>
