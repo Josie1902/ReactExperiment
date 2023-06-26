@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <body style={{backgroundColor: "#F5F5F5"}}>
       <Grid container style={{width:"100vw",height:"100vh"}}>
-        <Grid xs={2} 
+        <Grid item xs={2} 
         style={{backgroundColor: "#ff8a80" }}
         >
           Navbar

@@ -11,16 +11,12 @@ import Image from 'next/image'
 import house from '../../public/house.svg'
 import {Hidden} from '@mui/material'
 
+import { roleHook} from './code'
+
 
 export default function Login(){
 
-    const [role, setRole] = React.useState(() => ['tenant']);
-
-    const handleRole = (event, newRole) => {
-        if (newRole.length) {
-            setRole(newRole);
-          }
-    }
+    const {role,handleRole} =  roleHook()
 
     return(
         <body style={{backgroundColor: "#F5F5F5"}}>
