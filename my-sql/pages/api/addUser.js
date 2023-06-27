@@ -18,17 +18,8 @@
 //     res.status(200).json({ data: `${body.username} ${body.email}` })
 //   }
 
-import mysql from 'serverless-mysql';
 
-const db = mysql({
-  config: {
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT,
-    database: process.env.MYSQL_DATABASE,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD
-  }
-});
+import { addUser } from "@/models/db";
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -38,15 +29,12 @@ export default async function handler(req, res) {
 
   const { username, email } = req.body;
 
-  try {
-    await db.query('INSERT INTO tenant (username, email) VALUES (?, ?)', [username, email]);
-    console.log('User added to the database successfully.');
+  const success = await addUser(username, email);
 
+  if (success) {
     res.status(200).json({ message: 'User added successfully' });
-  } catch (error) {
-    console.error('Error adding user to the database:', error);
-    res.status(500).json({ error: 'An error occurred' });
+  } else {
+    res.status(500).json({ error: 'Error adding user' });
   }
-
-  db.end();
 }
+

@@ -18,7 +18,7 @@ const Home = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('/api/form', {
+      const response = await fetch('/api/addUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,15 +28,14 @@ const Home = () => {
 
       if (response.ok) {
         console.log('User added successfully.');
+        setUsername('');
+        setEmail('');
       } else {
         throw new Error('Error adding user.');
       }
     } catch (error) {
       console.error('Error adding user:', error);
     }
-
-    setUsername('');
-    setEmail('');
   };
 
   return (
