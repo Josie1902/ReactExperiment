@@ -19,7 +19,7 @@ export default function Login(){
     const {role,handleRole} =  roleHook()
 
     return(
-        <body style={{backgroundColor: "#F5F5F5"}}>
+        <body>
             <Grid container>
                 <Grid item lg={7} md={7} sm={9}
                 container

@@ -6,15 +6,14 @@ import {Button} from '@mui/material'
 import { Grid } from '@mui/material'
 import Image from 'next/image'
 import upload from '../../public/upload.svg'
+import Navbar from '../navbar'
 
 export default function OptionDetail({params}){
     const {form} = params
     return(
-        <body style={{backgroundColor: "#F5F5F5"}}>
-            <Typography variant="h4" fontWeight="bold" align='center' margin="3ch 0 0 0">{form}</Typography>
-            <Typography variant="overline" align='center' display="block" gutterBottom>
-            ServiceRequestID: SR00001
-            </Typography>
+        <body>
+            <Navbar></Navbar>
+            <Typography variant="h4" fontWeight="bold" align='center' margin="3ch 0 1ch 0">{form}</Typography>
             <Grid container 
             display= 'flex'
             direction="column"

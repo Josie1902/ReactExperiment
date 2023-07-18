@@ -2,7 +2,6 @@
   "name": "ticket-portal",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,10 +11,13 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.0",
     "@mui/material": "^5.13.5",
     "autoprefixer": "10.4.14",
+    "install": "^0.13.0",
     "mysql": "^2.18.1",
     "next": "13.4.6",
+    "npm": "^9.8.0",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",

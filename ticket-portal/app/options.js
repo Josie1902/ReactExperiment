@@ -59,7 +59,7 @@ export default function Options(){
     const [hoveredIndex, setIndex] = useState(null)
 
     return(
-        <Grid container sx={{padding:"0 10vw"}}>
+        <Grid container>
             {imageUrls.map((imageUrl, index) => (
               <Grid item xs={6} sm={4} md={4} lg={3} 
                 sx={{display: 'flex',

@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 248, 248, 248;
+  --background-end-rgb: 248, 248, 248;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +24,15 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+  margin-top: 64px; /* Adjust this value based on the height of your Navbar */
 }
