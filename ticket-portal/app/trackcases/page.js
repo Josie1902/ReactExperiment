@@ -1,11 +1,12 @@
 'use client'
 import * as React from 'react'
-import { Typography, Grid,Box,Paper,Stack } from "@mui/material"
+import { Typography, Grid, Box} from "@mui/material"
 import { createTheme, ThemeProvider,styled } from '@mui/material/styles';
 import Navbar from "../navbar"
 import SplitButton from './splitbutton';
 import ToggleView from './toggleview';
 import SearchField from './search';
+import ColumnWithBoxes from './column';
 
 const theme = createTheme({
     palette: {
@@ -42,18 +43,12 @@ export default function TrackCases(){
                                 </Grid>
                              </Grid>
                         </Grid>
-                        <Stack spacing={2} sx={{width: 250, height: "80vh", backgroundColor: '#ECECEC', margin:"1.5ch 0 0 0", borderRadius:1, display:"flex", alignItems:"center",flexDirection:"column"}}>
-                            <Typography variant='subtitle2' margin="1ch 0 0 0">Electricity</Typography>
-                            <Box sx={{display: 'flex', flexWrap: 'wrap', '& > :not(style)': {width: 220,height: 160,}}}>
-                                <Paper />
-                            </Box>
-                            <Box sx={{display: 'flex', flexWrap: 'wrap',  '& > :not(style)': {width: 220,height: 160,}}}>
-                                <Paper />
-                            </Box>
-                            <Box sx={{display: 'flex', flexWrap: 'wrap',  '& > :not(style)': {width: 220,height: 160,}}}>
-                                <Paper />
-                            </Box>
-                        </Stack>
+                        <Box sx={{display:"flex",gap: 2}}>
+                            {/* The number of columns (categories, status, tenants) is dynamic but i place it as this first */}
+                            <ColumnWithBoxes/>
+                            <ColumnWithBoxes/>
+                            <ColumnWithBoxes/>
+                        </Box>
                     </Grid>
                 </Grid>
             </ThemeProvider>
